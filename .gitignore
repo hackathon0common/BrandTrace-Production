@@ -1,0 +1,46 @@
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Python virtual environments
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# Local databases
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Uploaded documents
+uploads/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor and IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs and temporary files
+*.log
+digest.txt
+
+# Node dependencies
+node_modules/
+
+backend/*_token.txt
+backend/*_token.txt
+*.backup
+*.safety
+*_backup.py
