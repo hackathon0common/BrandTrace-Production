@@ -1,4 +1,13 @@
 const ApiClient = (() => {
+
+  class ApiError extends Error {
+    constructor(message, status) {
+      super(message);
+      this.status = status;
+      this.name = "ApiError";
+    }
+  }
+
   const SESSION_KEY = "brandtrace.session";
   const BASE_KEY = "brandtrace.apiBase";
   const MOCK_KEY = "brandtrace.forceMock";
@@ -6,7 +15,7 @@ const ApiClient = (() => {
   const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
   
   // Use https:// for your production Vercel domain so requests don't fail due to mixed content/protocol errors
-  const defaultBase = isLocal ? "http://127.0.0.1:5000" : "https://brand-trace-beta.vercel.app";
+  const defaultBase = isLocal ? "http://127.0.0.1:5000" : "https://0hackathon0common0.pythonanywhere.com";
 
   const cfg = {
     base: localStorage.getItem(BASE_KEY) || defaultBase,
