@@ -1,0 +1,1 @@
+from backend.app import app  # re-export the existing Flask app

@@ -1,18 +1,13 @@
 {
   "version": 2,
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/backend/app.py"
-    },
-    {
-      "source": "/((?!api/).*)",
-      "destination": "/frontend/$1"
-    }
+    { "source": "/api/(.*)", "destination": "/api/index.py" },
+    { "source": "/((?!api/).*)", "destination": "/frontend/$1" }
   ],
   "functions": {
-    "backend/app.py": {
-      "maxDuration": 60
+    "api/index.py": {
+      "maxDuration": 60,
+      "includeFiles": "backend/**"
     }
   }
 }
