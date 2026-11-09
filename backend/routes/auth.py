@@ -42,7 +42,7 @@ def _membership_for(user):
 
 
 # Register a new user
-@auth_bp.route("/auth/register", methods=["POST"])
+@auth_bp.route("/api/auth/register", methods=["POST"])
 def register():
 
     data = request.get_json(silent=True)
@@ -127,7 +127,7 @@ def register():
 
 
 # Login an existing user
-@auth_bp.route("/auth/login", methods=["POST"])
+@auth_bp.route("/api/auth/login", methods=["POST"])
 def login():
 
     data = request.get_json(silent=True)
@@ -165,7 +165,7 @@ def login():
 
 
 # Get current logged-in user
-@auth_bp.route("/auth/me", methods=["GET"])
+@auth_bp.route("/api/auth/me", methods=["GET"])
 @jwt_required()
 def get_current_user():
 

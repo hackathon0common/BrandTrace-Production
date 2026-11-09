@@ -62,12 +62,12 @@ with app.app_context():
     from backend.services.bootstrap import bootstrap
     bootstrap()
 
-app.register_blueprint(review_bp, url_prefix="/api")
-app.register_blueprint(guidelines_bp, url_prefix="/api")
-app.register_blueprint(organisations_bp, url_prefix="/api")
-app.register_blueprint(history_bp, url_prefix="/api")
-app.register_blueprint(approvals_bp, url_prefix="/api")
-app.register_blueprint(auth_bp, url_prefix="/api")
+app.register_blueprint(review_bp)
+app.register_blueprint(guidelines_bp)
+app.register_blueprint(organisations_bp)
+app.register_blueprint(history_bp)
+app.register_blueprint(approvals_bp)
+app.register_blueprint(auth_bp)
 
 
 @app.route("/")

@@ -14,7 +14,7 @@ guidelines_bp = Blueprint("guidelines", __name__)
 # Retrieve saved guidelines
 
 @guidelines_bp.route(
-    "/guidelines/<int:organisation_id>",
+    "/api/guidelines/<int:organisation_id>",
     methods=["GET"]
 )
 @organisation_member_required
@@ -44,7 +44,7 @@ def get_guidelines(organisation_id):
 # Create or update guidelines
 
 @guidelines_bp.route(
-    "/guidelines/<int:organisation_id>",
+    "/api/guidelines/<int:organisation_id>",
     methods=["PUT"]
 )
 @organisation_admin_required

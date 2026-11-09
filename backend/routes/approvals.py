@@ -7,7 +7,7 @@ approvals_bp = Blueprint("approvals", __name__)
 
 
 @approvals_bp.route(
-    "/approvals/<int:review_id>",
+    "/api/approvals/<int:review_id>",
     methods=["PUT"]
 )
 @organisation_admin_required
