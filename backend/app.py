@@ -87,6 +87,19 @@ def health():
     }
 
 
+@app.route("/api/debug-path", methods=["GET", "POST", "PUT", "DELETE"])
+@app.route("/debug-path", methods=["GET", "POST", "PUT", "DELETE"])
+@app.route("/", methods=["GET"])
+def debug_path():
+    from flask import request
+    return {
+        "path": request.path,
+        "script_root": request.script_root,
+        "url": request.url,
+        "method": request.method,
+        "headers": dict(request.headers),
+    }, 200
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
