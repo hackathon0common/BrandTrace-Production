@@ -7,11 +7,11 @@ history_bp = Blueprint("history", __name__)
 
 
 @history_bp.route(
-    "/api/history/<int:organisation_id>",
+    "/history/<int:organisation_id>",
     methods=["GET"]
 )
 @history_bp.route(
-    "/api/organisations/<int:organisation_id>/history",
+    "/organisations/<int:organisation_id>/history",
     methods=["GET"]
 )
 @organisation_member_required

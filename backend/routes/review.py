@@ -7,7 +7,7 @@ import json
 review_bp = Blueprint("review", __name__)
 
 
-@review_bp.route("/api/analyze", methods=["POST"])
+@review_bp.route("/analyze", methods=["POST"])
 @organisation_member_required
 def analyze():
 

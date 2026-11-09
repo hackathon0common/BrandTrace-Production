@@ -19,7 +19,7 @@ organisations_bp = Blueprint("organisations", __name__)
 
 
 # Register a new organisation
-@organisations_bp.route("/api/organisations", methods=["POST"])
+@organisations_bp.route("/organisations", methods=["POST"])
 @jwt_required()
 def create_organisation():
 
@@ -74,7 +74,7 @@ def create_organisation():
 
 # Retrieve organisation details
 @organisations_bp.route(
-    "/api/organisations/<int:organisation_id>",
+    "/organisations/<int:organisation_id>",
     methods=["GET"]
 )
 @organisation_member_required
@@ -118,7 +118,7 @@ def get_organisation(organisation_id):
     }), 200
 
 
-@organisations_bp.route("/api/organisations/<int:organisation_id>", methods=["PUT"])
+@organisations_bp.route("/organisations/<int:organisation_id>", methods=["PUT"])
 @organisation_admin_required
 def update_organisation(organisation_id):
     data = request.get_json(silent=True)
@@ -142,7 +142,7 @@ def update_organisation(organisation_id):
 
 # Retrieve organisation dashboard information
 @organisations_bp.route(
-    "/api/organisations/<int:organisation_id>/dashboard",
+    "/organisations/<int:organisation_id>/dashboard",
     methods=["GET"]
 )
 @organisation_member_required
@@ -195,7 +195,7 @@ def get_organisation_dashboard(organisation_id):
 
 # Add an existing user to an organisation
 @organisations_bp.route(
-    "/api/organisations/<int:organisation_id>/members",
+    "/organisations/<int:organisation_id>/members",
     methods=["POST"]
 )
 @organisation_admin_required
