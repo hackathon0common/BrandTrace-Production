@@ -4,7 +4,7 @@ const ApiClient = (() => {
   const MOCK_KEY = "brandtrace.forceMock";
 
   const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
-  const defaultBase = isLocal ? "http://127.0.0.1:5000" : "https://brand-trace-beta.vercel.app/";
+  const defaultBase = isLocal ? "http://127.0.0.1:5000" : "brand-trace-arsloqkww-hackathon-388d.vercel.app";
 
   const cfg = {
     base: localStorage.getItem(BASE_KEY) || defaultBase,
